@@ -1,0 +1,15 @@
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\bin\Debug\VentaBoletos.exe.config
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\bin\Debug\VentaBoletos.exe
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\bin\Debug\VentaBoletos.pdb
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.csproj.AssemblyReference.cache
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\MainWindow.g.cs
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\App.g.cs
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos_MarkupCompile.cache
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos_MarkupCompile.lref
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\MainWindow.baml
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.g.resources
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.Properties.Resources.resources
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.csproj.GenerateResource.cache
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.csproj.CoreCompileInputs.cache
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.exe
+C:\Users\kbaut\source\repos\VentaBoletos\VentaBoletos\obj\Debug\VentaBoletos.pdb
