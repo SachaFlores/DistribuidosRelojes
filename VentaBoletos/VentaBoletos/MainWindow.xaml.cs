@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 
 
 namespace VentaBoletos
@@ -22,9 +23,12 @@ namespace VentaBoletos
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> opciones = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
+            comboBox.ItemsSource = opciones;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +47,51 @@ namespace VentaBoletos
                     MessageBox.Show("Error al conectar: " + ex.Message);
                 }
             }
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection("Server=DESKTOP-1TAVE7B\\SQLEXPRESS;Database=AirPabon;User Id=sa;Password=univalle;"))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT C.Nombre AS Ciudad, P.Nombre AS Pais
+            FROM Ciudad C
+            INNER JOIN Pais P ON C.PaisId = P.IdPais", conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ciudad = reader["Ciudad"].ToString();
+                    string pais = reader["Pais"].ToString();
+                    opciones.Add($"{ciudad}, {pais}");
+                }
+
+                comboBox.ItemsSource = opciones;
+            }
+        }
+        private void comboBox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            string texto = comboBox.Text.ToLower();
+
+            // Obtener la TextBox interna del ComboBox
+            var textBox = (TextBox)comboBox.Template.FindName("PART_EditableTextBox", comboBox);
+            if (textBox == null) return;
+
+            // Guardar la posición del cursor
+            int caretIndex = textBox.CaretIndex;
+
+            // Filtrar opciones
+            var filtrados = opciones
+                .Where(op => op.ToLower().Contains(texto))
+                .ToList();
+
+            comboBox.ItemsSource = filtrados;
+            comboBox.IsDropDownOpen = true;
+
+            // Restaurar el texto y la posición del cursor
+            comboBox.Text = texto;
+            textBox.CaretIndex = caretIndex;
         }
     }
 }
